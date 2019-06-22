@@ -2,7 +2,7 @@ import * as TYPES from "./types";
 
 const initialState = {
   isLoading: false,
-  postsData: [{ id: 1, name: "user name" }]
+  postsList: []
 };
 
 const postsReducer = (state = initialState, action) => {
@@ -10,8 +10,13 @@ const postsReducer = (state = initialState, action) => {
     case TYPES.IS_POSTS_LOADING:
       return {
         ...state,
-        postsData: action.payload
+        isLoading: action.payload
       };
+    case TYPES.GET_ALL_POSTS:
+      return {
+        ...state,
+        postsList: action.payload
+      }
     default:
       return { ...state };
   }

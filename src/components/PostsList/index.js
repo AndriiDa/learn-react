@@ -13,14 +13,14 @@ class PostsList extends Component {
   }
 
   render() {
-    const { isPostsLoading, postsData } = this.props;
+    const { isPostsLoading, data } = this.props;
 
     if (isPostsLoading) {
       return <p>Loading…</p>;
     }
 
-    console.log(postsData);
-    const list = postsData.map(post => (
+    
+    const list = data.map(post => (
       <li key={post.id}>
         <PostItem post={post} />
       </li>
@@ -41,7 +41,7 @@ PostsList.propTypes = {
 const mapStateToProps = state => {
   return {
     isPostsLoading: state.posts.isLoading,
-    postsData: state.posts.postsData
+    data: state.posts.postsList
   };
 };
 

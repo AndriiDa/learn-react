@@ -5,7 +5,7 @@ const PostItem = props => {
   const { id, name } = props.post;
   return (
     <div className="PostItem">
-      <h4>
+      <h4 className='App'>
         {id} : {name}
       </h4>
       <section className="cards">
