@@ -1,14 +1,14 @@
 import React, { Component } from "react";
 import { Route, Switch } from "react-router-dom";
-import MainPage from "./pages/MainPage";
-import PostsPage from "./pages/PostsPage";
+import About from "./pages/About";
+import Home from "./pages/Home";
 
 class App extends Component {
   render() {
     return (
       <Switch>
-        <Route path="/posts" component={PostsPage} />
-        <Route exact path="/" component={MainPage} />
+        <Route path="/about" component={ About } />
+        <Route exact path="/" component={ Home } />
       </Switch>
     );
   }

@@ -1,21 +1,29 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
+import AppBar from '@material-ui/core/AppBar';
+import CameraIcon from '@material-ui/icons/PhotoCamera';
+import Toolbar from '@material-ui/core/Toolbar';
+import Typography from '@material-ui/core/Typography';
+import { withStyles } from '@material-ui/core/styles';
 
-const Header = () => {
+const styles = theme => ({
+  icon: {
+    marginRight: theme.spacing(2),
+  },
+  
+});
+
+const Header = (props) => {
+  const {classes} = props
   return (
-    <ul>
-      <li>
-        <NavLink to="/" activeClassName="hurray">
-          Main page
-        </NavLink>
-      </li>
-      <li>
-        <NavLink to="/posts" activeClassName="hurray">
-          Posts page
-        </NavLink>
-      </li>
-    </ul>
+    <AppBar position="relative">
+        <Toolbar>
+          <CameraIcon className={classes.icon} />
+          <Typography variant="h6" color="inherit" noWrap>
+            Posts from everywhere
+          </Typography>
+        </Toolbar>
+      </AppBar>
   );
 };
 
-export default Header;
+export default withStyles(styles)(Header)
